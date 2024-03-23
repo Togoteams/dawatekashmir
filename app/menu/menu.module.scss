@@ -1,0 +1,26 @@
+.themeBtn {
+    @apply ml-8 mr-8 text-white inline-block font-normal text-sm text-center bg-lime-700;
+    padding: 0px 25px;
+    border-radius: 10px 0px 10px 0px;
+    line-height: 41px;
+    min-height: 39px;
+    min-width: 101px;
+    font-family: "Rubik", sans-serif;
+   
+}
+
+.input_group.quantityField {
+    height: 31px;
+    width: 105px;
+    padding: 0;
+    text-align: center;
+    z-index: 1 !important;
+    background-color: #EAEAEA;
+    border: 2px solid #EAEAEA;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 4px;
+    color: #000;
+    margin-left: 0 !important
+  }

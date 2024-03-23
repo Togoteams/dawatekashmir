@@ -1,0 +1,51 @@
+.footerBg {
+  background-color: var(--footer-bg);
+  
+
+  .footerContainer {
+    @apply container;
+
+    .footerGrid {
+      @apply container mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:p-4 pt-3;
+
+      .footerCenter {
+        @apply text-center;
+      }
+
+      .footerRight {
+        @apply text-right;
+      }
+      .footerCoulmn {
+        @apply text-gray-100;
+
+        ul {
+          @apply text-base;
+
+          li {
+            @apply leading-7 text-gray-200;
+          }
+        }
+        .footerItemHeader {
+          @apply font-semibold pb-2;
+        }
+
+        .socialColumn {
+          @apply pt-3 sm:flex-row md:space-x-2  inline-flex flex-row;
+
+          .socialIcons {
+            @apply text-2xl ml-1;
+          }
+          .appIcon {
+            @apply mt-2 ml-2;
+          }
+        }
+      }
+    }
+  }
+  .divider {
+    @apply border-t-2 border-gray-800;
+  }
+  .copyright {
+    @apply p-4 text-white text-center text-sm;
+  }
+}

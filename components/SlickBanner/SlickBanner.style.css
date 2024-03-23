@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+
+
+.slick-dots-custom
+{
+  @apply bottom-4;
+}
+.slick-dots-custom li, .slick-dots-custom li button {
+  @apply w-[15px] h-[15px];
+}
+.slick-dots-custom li button:before {
+  @apply text-[6px] lg:text-[12px] opacity-50;
+}
+
+.slick-dots-custom  li.slick-active button:before {
+
+  /* @apply text-black opacity-75; */
+  @apply opacity-75;
+}
+
+.slick-dots-custom  li button:before {
+  @apply !text-white;
+}
+
+.slick-prev, .slick-next {
+  opacity: 0.5;
+}
+
+
+.slick-prev {
+  left: 10px;
+  z-index: 1;
+}
+
+.slick-next {
+  right: 10px;
+  z-index: 1;
+}
+/* !before:text-[6px] !lg:before:text-[10px] */

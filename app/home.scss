@@ -1,0 +1,106 @@
+.description{
+    @apply text-center;
+    font-family: var(--font-family-rubik);
+    
+    background-image: url(../public/assets/images/about-bg.png);
+
+    .heading{
+        @apply text-center text-4xl font-extrabold	 text-black p-2 mb-2;
+         font-family: "Lobster", sans-serif;
+    }
+}
+
+
+.features{
+    @apply bg-lime-100;
+    .heading{
+        @apply text-center text-4xl font-extrabold	 text-black p-2 mb-2;
+         font-family: "Lobster", sans-serif;
+    }
+    .content{
+        font-family: var(--font-family-rubik);
+        @apply text-center;
+
+    }
+
+
+}
+
+/* Our blog */
+
+.dz-card.blog-half .dz-date {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 15px;
+    margin-right: 0;
+    text-transform: uppercase;
+    display: block;
+    transition: all 0.8s;
+    font-family: "Rubik", sans-serif;
+  }
+  
+  .dz-card.blog-half .dz-meta ul li {
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    margin-right: 35px;
+    display: inline-block;
+    font-family: "Rubik", sans-serif;
+  }
+  
+  .dz-card.blog-half .dz-meta ul li:not(:last-child)::after {
+    content: "";
+    height: 6px;
+    width: 6px;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    border-radius: 50%;
+    background-color: var(--primary);
+    transform: translate(0%, -50%);
+  }
+  
+  .dz-card.style-3 {
+    background-size: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+    background-position: center;
+  }
+  
+  .dz-card.style-3 .dz-info .dz-meta ul li:not(:last-child)::after {
+    content: "";
+    height: 6px;
+    width: 6px;
+    position: absolute;
+    right: -17%;
+    top: 50%;
+    border-radius: 50%;
+    background-color: var(--primary);
+    transform: translate(0%, -50%);
+  }
+  
+  .dz-card.style-3::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(359.53deg, #222 0.4%, rgba(34, 34, 34, 0) 99.59%);
+  }
+  
+  @media (max-width: 991px) {
+    .dz-card.blog-half .dz-meta ul li:not(:last-child)::after {
+      display: none;
+    }
+  }
+  
+  /* Our blog End */
