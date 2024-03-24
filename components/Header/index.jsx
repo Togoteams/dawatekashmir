@@ -83,25 +83,25 @@ const Header = () => {
                                     <div className={style.menuBar}>
                                         <div className={style.menuList}>
                                             <Link
-                                                href="http://localhost:3000"
+                                                href=""
                                                 className={style.menuItem}
                                             >
                                                 Home
                                             </Link>
                                             <Link
-                                                href="http://localhost:3000/menu"
+                                                href="/menu"
                                                 className={style.menuItem}
                                             >
                                                 Menu
                                             </Link>
                                             <Link
-                                                href="http://localhost:3000/about"
+                                                href="/about"
                                                 className={style.menuItem}
                                             >
                                                 About Us
                                             </Link>
                                             <Link
-                                                href="http://localhost:3000/contact"
+                                                href="/contact"
                                                 className={style.menuItem}
                                             >
                                                 Contact
@@ -113,7 +113,7 @@ const Header = () => {
                                 {/* Search Menu start */}
                                 <div className={style.rightMenu}>
                                     <div className={style.cart}>
-                                        <Link href="http://localhost:3000/cartDetail"><FaCartShopping /></Link>
+                                        <Link href="/cartDetail"><FaCartShopping /></Link>
                                     </div>
 
                                     <div>
@@ -160,16 +160,16 @@ const Header = () => {
                         {showMobileMenu && (
                             <div className={`${style.mobileMenus}`}>
                                 <div className="px-2 pt-2 pb-3 space-y-1">
-                                    <Link href="http://localhost:3000" className={style.mobileItem}>
+                                    <Link href="" className={style.mobileItem}>
                                        Home
                                     </Link>
-                                    <Link href="http://localhost:3000/about" className={style.mobileItem}>
+                                    <Link href="/about" className={style.mobileItem}>
                                        About Us
                                     </Link>
-                                    <Link href="http://localhost:3000/menu" className={style.mobileItem}>
+                                    <Link href="/menu" className={style.mobileItem}>
                                        Order Now
                                     </Link>
-                                    <Link href="http://localhost:3000/contact" className={style.mobileItem}>
+                                    <Link href="/contact" className={style.mobileItem}>
                                        Contact Us
                                     </Link>
                                 </div>
