@@ -12,10 +12,10 @@ const index = () => {
     return (
         <>
             {/* // <!-- Footer --> */}
-            <section className="bg-black relative site-footer style-1">
+            <section className="relative bg-logo site-footer style-1">
                 <div className="xl:pt-[75px] md:pt-[60px] pt-[50px]  pb-0 relative z-[2]">
                     <div className="container">
-                        <div className="row lg:flex block">
+                        <div className="block row lg:flex">
                             <div className="xl:w-1/4 lg:w-1/3 sm:w-1/2 w-full px-[15px]">
                                 <div className=" sm:mb-[30px] mb-2.5">
                                   

@@ -74,7 +74,7 @@ const Header = () => {
                                     <div className={`${style.Logo}`}>
                                         <Image
                                             className={style.logoImages}
-                                            src={`/assets/images/logo 1.png`}
+                                            src={`/assets/images/logo/logobg.png`}
                                             alt="Dawat E Kashmir Logo"
                                             width={274}
                                             height={274}

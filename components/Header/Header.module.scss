@@ -66,7 +66,7 @@
                     .menuList {
                         @apply flex space-x-4;
                         .menuItem {
-                            @apply text-gray-800 hover:bg-lime-200 hover:text-black rounded-md px-3 mt-3 py-2 font-normal text-base;
+                            @apply text-white hover:bg-lime-200 hover:text-black rounded-md px-3 mt-3 py-2 font-normal text-base;
                         }
                     }
                 }
