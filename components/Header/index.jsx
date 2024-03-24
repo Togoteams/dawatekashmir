@@ -83,7 +83,7 @@ const Header = () => {
                                     <div className={style.menuBar}>
                                         <div className={style.menuList}>
                                             <Link
-                                                href=""
+                                                href="/"
                                                 className={style.menuItem}
                                             >
                                                 Home
