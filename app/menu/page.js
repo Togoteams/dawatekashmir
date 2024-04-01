@@ -4,10 +4,58 @@ import Image from "next/image";
 import Link from 'next/link';
 import style from "../contact/contact.module.scss";
 import { Bike, Star, CopyX, ShoppingBag } from 'lucide-react';
+import MenuItem from "@/components/MenuItem";
 
 
 export default function Menu() {
     const [showModal, setShowModal] = React.useState(false);
+    const menuItems = [{
+        id: 1,
+        imageSrc: '/assets/images/pics1.jpg',
+        item: 'Double Patty Burger',
+        rating: '4.5',
+        supplier: 'Burger Farm',
+        rate: '$15.00'
+    }, {
+        id: 2,
+        imageSrc: '/assets/images/pics2.jpg',
+        item: 'Chicken Patty Burger',
+        rating: '4.5',
+        supplier: 'Burger Farm',
+        rate: '$15.00'
+    }, {
+        id: 3,
+        imageSrc: '/assets/images/pics3.jpg',
+        item: 'Veg Cripsy Burger',
+        rating: '4.5',
+        supplier: 'Burger Farm',
+        rate: '$15.00'
+    }, {
+        id: 4,
+        imageSrc: '/assets/images/pics4.jpg',
+        item: 'Aloo Tikki Burger',
+        rating: '4.5',
+        supplier: 'Burger Farm',
+        rate: '$15.00'
+    }, {
+        id: 5,
+        imageSrc: '/assets/images/pics1.jpg',
+        item: 'Pure Veg Burger',
+        rating: '4.5',
+        supplier: 'Burger Farm',
+        rate: '$15.00'
+    }, {
+        id: 6,
+        imageSrc: '/assets/images/pics2.jpg',
+        item: 'Chicken Burger',
+        rating: '4.5',
+        supplier: 'Burger Farm',
+        rate: '$15.00'
+    }];
+
+    const showModelHandler = () => {
+        setShowModal(true);
+    }
     return (
         <>
 
@@ -135,7 +183,8 @@ export default function Menu() {
                                         Filter
                                     </a>
                                 </div>
-                                <div className="dz-shop-card style-1 flex border border-[#0000001a] rounded-[10px] mb-5 overflow-hidden duration-500 hover:border-transparent hover:shadow-[0px_15px_55px_rgba(34,34,34,0.15)] relative">
+                                {menuItems.map(e => (<MenuItem key={e.id} imageSrc={e.imageSrc} item={e.item} rating={e.rating} supplier={e.supplier} rate={e.rate} showModalClick={showModelHandler} />))}
+                                {/* <div className="dz-shop-card style-1 flex border border-[#0000001a] rounded-[10px] mb-5 overflow-hidden duration-500 hover:border-transparent hover:shadow-[0px_15px_55px_rgba(34,34,34,0.15)] relative">
                                     <div className="dz-media w-[100px] min-w-[100px]">
                                         <Image src={"/assets/images/pics1.jpg"} height={100} width={108} alt="/" className="h-full" />
                                     </div>
@@ -298,7 +347,7 @@ export default function Menu() {
                                             <p className="mb-0"><span className="text-lime- font-weight-500 font-rubik">$45.00</span></p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -362,7 +411,7 @@ export default function Menu() {
                                                 <ul className="modal-btn-group flex  mx-[-7px]">
                                                     <li className="mx-[7px] lg:mb-0 mb-[10px]">
                                                         <button type="button" class="text-gray-900 bg-gradient-to-r from-lime-200 align-item-center via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none flex focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 font-rubik">Add to Cart &nbsp;
-                                                        <span> <ShoppingBag color="#000000" strokeWidth={0.75}/></span>
+                                                            <span> <ShoppingBag color="#000000" strokeWidth={0.75} /></span>
                                                         </button>
 
                                                     </li>
