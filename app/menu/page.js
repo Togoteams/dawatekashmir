@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useCart } from "../../components/CartContext";
 import Image from "next/image";
 import Link from "next/link";
 import style from "../contact/contact.module.scss";
@@ -7,6 +8,7 @@ import { Bike, CopyX, Star, ShoppingBag } from "lucide-react";
 import menuItems from "../menu/menuItems.json"; // ✅ JSON mock data
 
 export default function Menu() {
+  const { addToCart } = useCart();
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [search, setSearch] = useState("");
@@ -461,7 +463,7 @@ export default function Menu() {
                         <li className="mr-[45px] text-[15px] font-medium leading-[22px]  font-rubik">
                           Price{" "}
                           <span className="text-primary flex text-xl font-semibold leading-[30px] mt-[5px] text-lime-600">
-                           $ {selectedItem.price}
+                            $ {selectedItem.price}
                           </span>
                         </li>
                         {/* <li className="mr-[45px] text-[15px] font-medium leading-[22px]  font-rubik">Quantity
@@ -479,11 +481,14 @@ export default function Menu() {
                         <li className="mx-[7px] lg:mb-0 mb-[10px]">
                           <button
                             type="button"
-                            class="text-gray-900 bg-gradient-to-r from-lime-200 align-item-center via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none flex focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 font-rubik"
+                            className="text-gray-900 bg-gradient-to-r from-lime-200 align-item-center via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none flex focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 font-rubik"
+                            onClick={() => {
+                              addToCart(selectedItem);
+                              setShowModal(false);
+                            }}
                           >
                             Add to Cart &nbsp;
                             <span>
-                              {" "}
                               <ShoppingBag color="#000000" strokeWidth={0.75} />
                             </span>
                           </button>

@@ -1,7 +1,7 @@
 import Header from "@/components/Header/index";
 import "./globals.scss";
 import Footer from "@/components/Footer";
-
+import { CartProvider } from "@/components/CartContext";
 
 export const metadata = {
   title: "Create Next App",
@@ -12,16 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="LIGHT-THEME">
       <body suppressHydrationWarning={true}>
-        <>
-        
+        <CartProvider>
           <Header />
-          
-          <main>
-            {children}
-          </main>
-          
+          <main>{children}</main>
           <Footer />
-        </>
+        </CartProvider>
       </body>
     </html>
   );
