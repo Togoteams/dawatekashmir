@@ -208,8 +208,9 @@ export default function Menu() {
                         return (
                           <div
                             key={item.id}
-                            className={`dz-shop-card style-1 flex border border-[#0000001a] rounded-[10px] mb-5 overflow-hidden hover:shadow-lg relative ${
-                              isSearched ? "ring-2 ring-lime-400" : ""
+                            className={`dz-shop-card style-1 flex border border-[#0000001a] rounded-[10px] mb-5 overflow-hidden hover:shadow-lg relative 
+                              
+                            //   isSearched ? "ring-2 ring-lime-400" : ""
                             }`}
                           >
                             <div className="dz-media w-[100px] min-w-[100px]">
@@ -255,14 +256,13 @@ export default function Menu() {
                                     )}
                                   </svg>
                                   <span
-                                    className={`text-black font-rubik font-medium cursor-pointer ${
-                                      isSearched
-                                        ? "bg-lime-100 px-2 rounded"
-                                        : ""
-                                    }`}
+                                    className={`text-black font-rubik font-medium cursor-pointer 
+                                    
+                                    `}
                                     onClick={() => openModal(item)}
                                   >
                                     {item.name}
+                                    
                                   </span>
                                 </h6>
                                 <div className="rate bg-[#FE9F10] text-white rounded-[5px] py-[2px] px-[5px] text-[13px]">
