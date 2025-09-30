@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { useCart } from "../../components/CartContext";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../components/store/cartSlice";
 import Image from "next/image";
 import Link from "next/link";
 import style from "../contact/contact.module.scss";
@@ -8,12 +9,14 @@ import { Bike, CopyX, Star, ShoppingBag } from "lucide-react";
 import menuItems from "../menu/menuItems.json"; // ✅ JSON mock data
 
 export default function Menu() {
-  const { addToCart } = useCart();
+  // const { addToCart } = useCart();
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [showSuccess, setShowSuccess] = useState(false); // Success modal state
   const [search, setSearch] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [submittedSearch, setSubmittedSearch] = useState("");
+  const dispatch = useDispatch();
 
   const categories = [
     "pizza",
@@ -66,6 +69,14 @@ export default function Menu() {
   // Handler to reset menu to show all items
   const handleResetMenu = () => {
     setSubmittedSearch("");
+  };
+
+  // Handler for Add to Cart
+  const handleAddToCart = (item) => {
+    dispatch(addToCart(item));
+    setShowModal(false);
+    setShowSuccess(true);
+    setTimeout(() => setShowSuccess(false), 2000); // Hide after 2 seconds
   };
 
   return (
@@ -262,7 +273,6 @@ export default function Menu() {
                                     onClick={() => openModal(item)}
                                   >
                                     {item.name}
-                                    
                                   </span>
                                 </h6>
                                 <div className="rate bg-[#FE9F10] text-white rounded-[5px] py-[2px] px-[5px] text-[13px]">
@@ -482,10 +492,7 @@ export default function Menu() {
                           <button
                             type="button"
                             className="text-gray-900 bg-gradient-to-r from-lime-200 align-item-center via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none flex focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 font-rubik"
-                            onClick={() => {
-                              addToCart(selectedItem);
-                              setShowModal(false);
-                            }}
+                            onClick={() => handleAddToCart(selectedItem)}
                           >
                             Add to Cart &nbsp;
                             <span>
@@ -513,6 +520,16 @@ export default function Menu() {
             onClick={() => setShowModal(false)}
           ></div>
         </>
+      )}
+
+      {/* Success Modal */}
+      {showSuccess && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
+          <div className="bg-white rounded-lg shadow-lg p-8 text-center">
+            <h3 className="text-lime-700 font-bold text-xl mb-2">Success!</h3>
+            <p className="text-gray-700 font-rubik">Item added to cart.</p>
+          </div>
+        </div>
       )}
     </>
   );
